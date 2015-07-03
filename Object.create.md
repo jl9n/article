@@ -13,7 +13,7 @@ Object.create(proto [, propertiesObject ]) 是ES5中新引入的对象快捷创�
 * set: 当给该函数赋值时采取的方法
 
 当然Object.create虽然好用，但是由于是es5 故有兼容问题，不过搞清楚他的原理还作用之后，还是可以做兼容的
-```
+```javascript
 inherit = function(p,descriptors){
 	if(Object.create){
 		return Object.create(p)
@@ -30,7 +30,7 @@ inherit = function(p,descriptors){
 
 Object.defineProperty 其实是一样的
 对一个已经创建的对象，修改他的属性
-```
+```javascript
 var a = {x:1};
 Object.defineProperty(a,"x",{
 	/**
