@@ -26,4 +26,6 @@ for(var i = btns.length;i--;){
 然后判断i是否为零，如果不为零继续执行，如果为零则停止循环
 
 # for-in
-于此相关的还有一个
+for in 用于循环一个没有序号的对象，可以用来枚举一个对象的可枚举性的属性，如一个{}的枚举，Object.prototype的枚举
+一般数据不适合用for-in来遍历因为for-in是不能保证循环顺序的
+在遍历prototype的时候，大部分时候需要加一把锁 Object.prototype.hasOwnProperty 把不是自己的属性给过滤掉
