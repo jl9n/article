@@ -1,0 +1,3 @@
+# position的个人理解
+
+position 是指元素在网页中所存在的方式，给元素设置不同的position会改变元素的包含块
