@@ -52,18 +52,22 @@ position为非static和float为非none的时候
 
 要理解IFC，必须要搞清楚的几个概念： line boxes 、base line 
 
-* 什么是IFC（inline formatting context）
+* 什么是IFC（inline formatting context）。
+
 一个独立的行内格式化上下文区域
 
 * line boxes
+
 位于行内格式化上下文中，每个行框是独立的框子，行框一个接一个地水平排列，起点是包含块的顶部。 水平方向上的 margin，border 和 padding 在框之间得到保留，垂直方向的margin不起作用，padding和border有效
 
 * 行框的范围
+
 第一个行框一边贴合包含块的一边如果内部存在float的元素会缩短行框的宽度，
 
 * 行框的对齐
 
-vertical-align属性，包含九个不同的值，就像英语本子上四条线一样，规定了行框垂直方向上的对其方式
+vertical-align属性，包含九个不同的值，就像英语本子上四条线一样，规定了行框垂直方向上的对其方式。
+
 	* baseline -- 文字的基线与行框的基线对其
 	* sub -- 基线与行框下标对其
 	* super -- 基线与行框上标线对齐
@@ -129,3 +133,14 @@ position包含四个值："static","relative","absolute","fixed"
 * "left" 和 "right" 其中一个是auto，另外一个有值，则取有值的那一个
 * "left" 和 "right" 都有值，此时包含块就起作用了，if(包含块的direction为ltr)则根据left来确定 else 根据right来确定
 * "bottom" 和 "top" 如果都有值，则按照top的值来计算，因为元素垂直方向的排布都是从上到下排布
+
+## z-index
+
+position为非static的时候，元素会有一个z-index的属性，决定重叠区域的元素排布。
+
+他遵从几条比较准则：
+* 在同一包含块下，都没有z-index属性的元素，各元素之间按照元素的先后性进行排布，先出现的在下面，后出现的在上面
+* 在同一包含块下，规定了z-index，则z-index大的比z-index小的更上层，不赋值则等同于0 
+* 不同包含块下的元素无法直观比较z-index，应该先比较同一届比包含块的z-index
+
+** 至于vertical-align:middle 未找到正确的介绍，暂时留空，以后查阅资料之后补充 **
