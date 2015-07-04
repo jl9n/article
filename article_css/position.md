@@ -143,4 +143,4 @@ position为非static的时候，元素会有一个z-index的属性，决定重�
 * 在同一包含块下，规定了z-index，则z-index大的比z-index小的更上层，不赋值则等同于0 
 * 不同包含块下的元素无法直观比较z-index，应该先比较同一届比包含块的z-index
 
-** 至于vertical-align:middle 未找到正确的介绍，暂时留空，以后查阅资料之后补充 **
+-- 至于vertical-align:middle 未找到正确的介绍，暂时留空，以后查阅资料之后补充 --
